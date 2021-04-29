@@ -12,13 +12,22 @@ mkdir -p dist && rm -rf "$archive_path" "$build_archive_path"
 
 if [ -d "out" ]; then
     cd out
-    #echo "Show files folder: esp32-arduino-lib-builder/components/arduino/tools/sdk"
-    #ls -R /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/components/arduino/tools/sdk
+    echo "Show files from folder out"
+    ls
     echo "Creating framework-arduinoespressif32"
     git clone https://github.com/espressif/arduino-esp32
-    rm -rf arduino-esp32/tools/sdk
     rm -rf arduino-esp32/docs
-    cp -Rf /home/runner/work/esp32-arduino-lib-builder/esp32-arduino-lib-builder/components/arduino/tools/sdk arduino-esp32/tools/sdk
+    rm -rf arduino-esp32/package
+    rm -rf arduino-esp32/tools/sdk
+    rm -rf arduino-esp32/tools/esptool.py
+    rm -rf arduino-esp32/tools/gen_esp32part.py
+    rm -rf arduino-esp32/tools/platformio-build*
+    rm -rf arduino-esp32/platform.txt
+    cp -f platform.txt arduino-esp32/
+    cp -Rf tools/sdk arduino-esp32/tools/
+    cp -f tools/esptool.py arduino-esp32/tools/
+    cp -f tools/gen_esp32part.py arduino-esp32/tools/
+    cp -f tools/platformio-build* arduino-esp32/tools/
     cp ../core_version.h arduino-esp32/cores/esp32/core_version.h
     mv arduino-esp32/ framework-arduinoespressif32/
     tar --exclude=.* -zcf ../$pio_archive_path framework-arduinoespressif32/
