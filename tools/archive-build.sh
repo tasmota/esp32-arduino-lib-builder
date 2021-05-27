@@ -22,7 +22,7 @@ mkdir -p dist && rm -rf "$archive_path" "$build_archive_path"
 if [ -d "out" ]; then
     cd out
     echo "Creating framework-arduinoespressif32"
-    git clone https://github.com/espressif/arduino-esp32 -b idf-release/v3.3
+    git clone https://github.com/espressif/arduino-esp32 -b release/v1.0
     rm -rf arduino-esp32/tools/sdk
     rm -rf arduino-esp32/docs
     cp -Rf tools/sdk arduino-esp32/tools/sdk
