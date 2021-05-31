@@ -5,7 +5,7 @@ source ./tools/config.sh
 #
 # CLONE/UPDATE ARDUINO
 #
-ARDUINO_BRANCH="idf-release/v3.3"
+ARDUINO_BRANCH="release/v1.0"
 ARDUINO_HAS_BRANCH=`git_branch_exists "$AR_COMPS/arduino" "idf-$IDF_BRANCH"`
 if [ "$ARDUINO_HAS_BRANCH" == "1" ]; then
 	ARDUINO_BRANCH="idf-$IDF_BRANCH"
