@@ -25,7 +25,15 @@ if [ -d "out" ]; then
     git clone https://github.com/espressif/arduino-esp32 -b release/v1.0
     rm -rf arduino-esp32/tools/sdk
     rm -rf arduino-esp32/docs
+    rm -rf arduino-esp32/tools/esptool.py
+    rm -rf arduino-esp32/tools/gen_esp32part.py
+    rm -rf arduino-esp32/tools/platformio-build.py
+    rm -rf arduino-esp32/platform.txt
     cp -Rf tools/sdk arduino-esp32/tools/sdk
+    cp -Rf tools/esptool.py arduino-esp32/tools/esptool.py
+    cp -Rf tools/gen_esp32part.py arduino-esp32/tools/gen_esp32part.py
+    cp -Rf tools/platformio-build.py arduino-esp32/tools/platformio-build.py
+    cp -Rf platform.txt arduino-esp32/platform.txt
     cp ../core_version.h arduino-esp32/cores/esp32/core_version.h
     mv arduino-esp32/ framework-arduinoespressif32/
     tar --exclude=.* -zcf ../$pio_archive_path framework-arduinoespressif32/
