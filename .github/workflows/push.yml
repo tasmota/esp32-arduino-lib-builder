@@ -1,4 +1,4 @@
-name: ESP32 Arduino Libs CI
+name: ESP32 Arduino Solo1
 
 on:
   push:
