@@ -1,9 +1,9 @@
-name: ESP32 Arduino IDF 3.3
+name: ESP32 Arduino IDF 3.3.5 for Tasmota
 
 on:
   push:
     branches:
-    - release/v3.3
+    - tasmota/v3.3
   pull_request:
 
 jobs:
