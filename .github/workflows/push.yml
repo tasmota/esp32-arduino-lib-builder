@@ -1,9 +1,9 @@
-name: ESP32 Arduino Solo1
+name: TASMOTA ESP32 Arduino Solo1
 
 on:
   push:
     branches:
-    - release/v3.3-solo1
+    - tasmota/v3.3-solo1
   pull_request:
 
 jobs:
